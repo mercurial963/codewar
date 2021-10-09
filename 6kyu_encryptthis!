@@ -1,0 +1,15 @@
+# https://www.codewars.com/kata/5848565e273af816fb000449/train
+
+def encrypt_this(text):
+    encrypting = list()
+    word = text.split()
+    
+    for n in range(len(word)):
+        if len(word[n]) == 1 :
+            encrypting.append(str((ord(word[n][0]))))
+        elif len(word[n]) == 2:
+            encrypting.append(str((ord(word[n][0])))+word[n][1])
+        else:
+            encrypting.append((str(ord(word[n][0]))+word[n][-1]+word[n][2:-1]+word[n][1]))
+    encrypted = " ".join(encrypting)
+    return encrypted
